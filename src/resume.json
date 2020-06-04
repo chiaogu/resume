@@ -1,0 +1,104 @@
+{
+  "basics": {
+    "name": "Ian Chiao",
+    "label": "Frontend Engineer",
+    "picture": "",
+    "email": "chiaogu@gmail.com",
+    "phone": "",
+    "website": "",
+    "summary": "- 7+ years of software developement experience designing, developing website and mobile apps for differnt industies like music, ecommerce, messenging and BaaS.- Pay attension at both UX and DX - Resolving problems by not only engineering but also cross-team coordination- Seeking an opportunity to solve people's problem and multiply team’s output    ",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Seattle",
+      "countryCode": "US",
+      "region": "WA"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "chiaogu",
+        "url": "https://github.com/chiaogu"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "chiaogu",
+        "url": "https://www.linkedin.com/in/chiaogu/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "",
+      "position": "",
+      "website": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Fu Jen Catholic University",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2009-09-01",
+      "endDate": "2014-02-01"
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "description": "",
+      "highlights": [],
+      "keywords": [],
+      "startDate": "",
+      "endDate": "",
+      "roles": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Silver Award in Software category",
+      "date": "",
+      "awarder": "YSED Award",
+      "summary": "Super Drop Interactive Waterfall from 358 projects"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Node.js",
+        "Java",
+        "Android"
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "keywords": [
+        "React",
+        "Angular",
+        "Redux",
+        "RxJS",
+        "Emotion",
+        "Sass"
+      ]
+    },
+    {
+      "name": "Tools",
+      "keywords": [
+        "Git",
+        "Webpack",
+        "Jest",
+        "Puppeteer",
+        "Testing Library",
+        "Storybook"
+      ]
+    }
+  ]
+}
