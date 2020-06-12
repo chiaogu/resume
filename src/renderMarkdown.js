@@ -4,8 +4,8 @@ function formatDate(date) {
   return dateFormat(new Date(date), 'mmm yyyy');
 }
 
-function emailLink(email) {
-  return `[${email}](mailto:${email})`;
+function link(text, url) {
+  return url ? `[${text}](${url})` : text;
 }
 
 function profileLink(profiles, network) {
@@ -14,16 +14,11 @@ function profileLink(profiles, network) {
   return `[${url.replace(/https:\/\//, '')}](${url})`;
 }
 
-function companyLink(work) {
-  const { website, company } = work;
-  return website ? `[${company}](${website})` : company;
-}
-
 function basicInfo(basics) {
   const { name, email, summary, location: { city, region }, profiles } = basics;
   return `
 # ${name}
-${city} ${region}・${emailLink(email)}・${profileLink(profiles, 'Github')}・${profileLink(profiles, 'LinkedIn')}
+${city} ${region}・${link(email, `mailto:${email}`)}・${profileLink(profiles, 'Github')}・${profileLink(profiles, 'LinkedIn')}
 
 ${summary}
   `.trim();
@@ -33,10 +28,19 @@ function experience(work) {
   const { position, startDate, endDate, summary, highlights } = work;
   const formattedStartDate = formatDate(startDate);
   const formattedEndDate = endDate === null ? 'Present' : formatDate(endDate);
+  const { website, company } = work;
   return `
-**${position}**・${companyLink(work)}・${formattedStartDate} - ${formattedEndDate}  
-${summary}
+**${position}**・${link(company, website)}・${formattedStartDate} - ${formattedEndDate}  
 ${highlights.map(highlight => `- ${highlight}`).join('\n')}
+  `.trim();
+}
+
+function project(project) {
+  const { name, description, url, endDate } = project;
+  const date = formatDate(endDate);
+  return `
+**${name}**・[Github](${url})・${date}  
+${description}
   `.trim();
 }
 
@@ -46,9 +50,9 @@ function education(education) {
 }
 
 function award(award) {
-  const { title, date, awarder, summary } = award;
+  const { title, date, awarder, summary, website } = award;
   return `
-**${title}**・${awarder}・${formatDate(date)}  
+**${title}**・[${awarder}](${website})・${formatDate(date)}  
 ${summary}
   `.trim();
 }
@@ -62,16 +66,21 @@ export default function renderMarkdown(resume) {
   return `
 ${basicInfo(resume.basics)}
 
-## Skills
-${resume.skills.map(skill).join('  \n')}
-
 ## Experience
 ${resume.work.map(experience).join('\n\n')}
+
+## Personal Projects
+${resume.projects.map(project).join('\n\n')}
+
+## Awards
+${resume.awards.map(award).join('\n\n')}
 
 ## Education
 ${education(resume.education[0])}
 
-## Awards
-${resume.awards.map(award).join('\n\n')}
+## Skills
+${resume.skills.map(skill).join('  \n')}
+
+
   `.trim();
 }
