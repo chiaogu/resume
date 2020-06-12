@@ -58,7 +58,7 @@
     {
       "company": "Herxun",
       "position": "Android Engineer",
-      "website": "https://web.archive.org/web/20161021122250/http://herxun.co",
+      "website": "",
       "startDate": "2014/07",
       "endDate": "2016/11",
       "summary": "Participate in several SaaS and mobile app projects.",
@@ -101,16 +101,16 @@
   ],
   "awards": [
     {
-      "title": "Silver Award in Software category",
-      "date": "2013/04",
-      "awarder": "YSED Award",
-      "summary": "Super Drop Interactive Waterfall from 358 projects"
-    },
-    {
       "title": "1st place in Mobile category",
       "date": "2018/09",
       "awarder": "Js13kGames",
       "summary": "Planetfall - A planetary exploration game."
+    },
+    {
+      "title": "Silver Award in Software category",
+      "date": "2013/04",
+      "awarder": "YSED Award",
+      "summary": "Super Drop Interactive Waterfall from 358 projects"
     }
   ],
   "skills": [
@@ -143,7 +143,6 @@
         "Webpack",
         "Jest",
         "Puppeteer",
-        "Testing Library",
         "Storybook"
       ]
     }

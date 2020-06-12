@@ -53,8 +53,9 @@ ${summary}
   `.trim();
 }
 
-function skills(skills) {
-  
+function skill(skill) {
+  const { keywords } = skill;
+  return keywords.join('・');
 }
 
 export default function renderMarkdown(resume) {
@@ -71,6 +72,6 @@ ${education(resume.education[0])}
 ${resume.awards.map(award).join('\n\n')}
 
 ## Skills
-${skills(resume.skills)}
+${resume.skills.map(skill).join('  \n')}
   `.trim();
 }
