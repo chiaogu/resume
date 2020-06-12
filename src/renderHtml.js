@@ -16,7 +16,7 @@ const Template = ({ basics: { name, summary } }) => (
   </html>
 );
 
-export default function render(resume) {
+export default function renderHtml(resume) {
   const result = ReactDOMServer.renderToString(<Template {...resume}/>);
   return minify(result, {
     removeComments: true

@@ -6,7 +6,7 @@
     "email": "chiaogu@gmail.com",
     "phone": "",
     "website": "",
-    "summary": "- 7+ years of software developement experience designing, developing website and mobile apps for differnt industies like music, ecommerce, messenging and BaaS.- Pay attension at both UX and DX - Resolving problems by not only engineering but also cross-team coordination- Seeking an opportunity to solve people's problem and multiply team’s output    ",
+    "summary": "7+ years of software developement experience designing, developing website and mobile apps for differnt industies like music, ecommerce, messenging and BaaS.- Pay attension at both UX and DX - Resolving problems by not only engineering but also cross-team coordination- Seeking an opportunity to solve people's problem and multiply team’s output    ",
     "location": {
       "address": "",
       "postalCode": "",
@@ -23,18 +23,59 @@
       {
         "network": "LinkedIn",
         "username": "chiaogu",
-        "url": "https://www.linkedin.com/in/chiaogu/"
+        "url": "https://linkedin.com/in/chiaogu"
       }
     ]
   },
   "work": [
     {
-      "company": "",
-      "position": "",
+      "company": "Positive Grid",
+      "position": "Sr.Frontend Engineer",
+      "website": "www.positivegrid.com",
+      "startDate": "2017/10",
+      "endDate": null,
+      "summary": "We are a team of sound designers, programmers, engineers, researchers and musicians working together at the forefront of music technology.",
+      "highlights": [
+        "Good at cross-team coordination and finding solution to resolve challenges",
+        "Establish study group, workshop and weekly sharing events",
+        "Improve the interview process and actively adjust the jd according to company's need",
+        "Actively notice the problem of the workflow and "
+      ]
+    },
+    {
+      "company": "8 Interactive",
+      "position": "Frontend Engineer",
+      "website": "https://no8.ai/home-en.html",
+      "startDate": "2016/11",
+      "endDate": "2017/09",
+      "summary": "Participate in the development of a product called Number 8, a multi-channel messaging center.",
+      "highlights": [
+        "Lead development of console web app. Design project stucture and implement components. Develop with Angular, Scss and RxJS.",
+        "Build the checkout page with Express and Handlebars.",
+        "Implement platform adapters to handle webhook requests sent from Facebook Messenger and Line.Test and deploy to AWS Lambda using Serverless framework."
+      ]
+    },
+    {
+      "company": "Herxun",
+      "position": "Android Engineer",
+      "website": "https://web.archive.org/web/20161021122250/http://herxun.co",
+      "startDate": "2014/07",
+      "endDate": "2016/11",
+      "summary": "Participate in several SaaS and mobile app projects.",
+      "highlights": [
+        "Neioo - A platform for beacon management. Users can set up trigger event remotely. I am responsible for developing the SDK for Android.",
+        "Lightspeed - A BaaS offer features such as push, instant messaging and database. I am responsible for improving the SDK for Android , writing documentations tutorials and open source sample app.",
+        "Holimoo - A mobile app for holiday. I am responsible for developing the Android app. Implement social wall, custom calendar and camera filters. Done a lot of complex custom animations to show a lively feeling.",
+        "Meet - A social media app for startup communities. Provide features such as news feed, voting and instant messaging. I am responsible for developing the Android app."
+      ]
+    },
+    {
+      "company": "Union Technology",
+      "position": "Android Developer",
       "website": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
+      "startDate": "2013/09",
+      "endDate": "2014/01",
+      "summary": "The company's main business is to undertake mobile app project from government departments. I am responsible for working with designers and back-end engineers to complete Android apps",
       "highlights": []
     }
   ],
@@ -42,28 +83,34 @@
     {
       "institution": "Fu Jen Catholic University",
       "area": "Computer Science",
-      "studyType": "Bachelor",
+      "studyType": "B.S.",
       "startDate": "2009-09-01",
       "endDate": "2014-02-01"
     }
   ],
   "projects": [
     {
-      "name": "",
-      "description": "",
+      "name": "Planetfall",
+      "description": "A planetary exploration game made for js13kGames competition.",
       "highlights": [],
       "keywords": [],
       "startDate": "",
       "endDate": "",
-      "roles": ""
+      "url": "https://github.com/chiaogu/planetfall"
     }
   ],
   "awards": [
     {
       "title": "Silver Award in Software category",
-      "date": "",
+      "date": "2013/04",
       "awarder": "YSED Award",
       "summary": "Super Drop Interactive Waterfall from 358 projects"
+    },
+    {
+      "title": "1st place in Mobile category",
+      "date": "2018/09",
+      "awarder": "Js13kGames",
+      "summary": "Planetfall - A planetary exploration game."
     }
   ],
   "skills": [
