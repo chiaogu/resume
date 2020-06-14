@@ -62,16 +62,16 @@ export default function renderMarkdown(resume) {
   return `
 ${basicInfo(resume.basics)}
 
+## Skills
+${resume.skills.map(skill).join('  \n')}
+
 ## Experience
 ${resume.work.map(experience).join('\n\n')}
 
 ## Education
 ${education(resume.education[0])}
 
-## Awards & Projects
+## Awards
 ${resume.awards.map(award).join('\n\n')}
-
-## Skills
-${resume.skills.map(skill).join('  \n')}
   `.trim();
 }

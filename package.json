@@ -4,7 +4,7 @@
   "description": "",
   "author": "",
   "scripts": {
-    "build": "",
+    "build": "babel-node src/main.js",
     "dev": "concurrently \"nodemon --exec babel-node src/main.js\" \"live-server output\""
   },
   "devDependencies": {
