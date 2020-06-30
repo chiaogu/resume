@@ -1,4 +1,6 @@
 import dateFormat from 'dateformat';
+import fs from 'fs-extra';
+import path from 'path';
 
 function formatDate(date) {
   return dateFormat(new Date(date), 'mmm yyyy');
@@ -62,7 +64,7 @@ function skill(skill) {
   return keywords.join('・');
 }
 
-export default function renderMarkdown(resume) {
+function renderMarkdown(resume) {
   return `
 ${basicInfo(resume.basics)}
 
@@ -83,4 +85,8 @@ ${resume.skills.map(skill).join('  \n')}
 
 
   `.trim();
+}
+
+export default function writeMarkdown(outputFolder, resume) {
+  fs.writeFileSync(path.join(outputFolder, 'README.md'), renderMarkdown(resume));
 }
