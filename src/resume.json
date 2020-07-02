@@ -95,7 +95,7 @@
   "projects": [
     {
       "name": "Planetfall",
-      "description": "A planetary exploration game made for js13kGames competition.",
+      "description": "A 10kb planetary exploration game designed and developed in one month using vanilla javascript, Canvas API, and Rollup.",
       "url": "https://github.com/chiaogu/planetfall",
       "endDate": "2018/09"
     },
