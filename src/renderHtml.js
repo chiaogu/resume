@@ -34,7 +34,7 @@ const Style = () => (
         max-width: 100%;
         min-height: 1122px;
         margin: auto;
-        padding: 69px 41px;
+        padding: 69px 45px 63px 45px;
         background: #fff;
         /* border: 1px solid #000; */
         box-sizing: border-box;
@@ -43,22 +43,46 @@ const Style = () => (
         font-size: 12px;
         line-height: 1.67;
         transition: padding 0.3s;
-        zoom: 1.3;
+        /* zoom: 1.3; */
+        ::-webkit-scrollbar {
+            width: 0;
+        } 
         ${mobileOnly(`padding: 69px 20px;`)}
       }
       
+      section {
+        margin-top: 24px;
+      }
+      
+      p {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 4px;
+      }
+      
       h1 {
-        margin: 0;
+        margin: 0 0 0 -5px;
+        line-height: 1.2;
+        height: 40px;
         font-size: 3em;
         font-family: Letter Gothic Std;
+      }
+      
+      h2 {
+        margin: 0;
+        line-height: 1;
+        margin: 8px 0;
       }
       
       h3 {
         font-size: 1em;
         font-weight: normal;
+        line-height: 1.5;
+        margin: 8px 0;
       }
       
       ul {
+        margin: 0;
         list-style-type: none;
         padding-inline-start: 1em;
       }
@@ -118,7 +142,7 @@ const Flex = ({ children }) => (
 )
 
 const Summary = ({ summary, email, profiles, location: { city, region } }) => (
-  <section>
+  <section css={css`margin-top: 8px;`}>
     {city} {region}
     <DotOrWrap/>
     <a href={`mailto:${email}`}>{email}</a>
@@ -128,7 +152,9 @@ const Summary = ({ summary, email, profiles, location: { city, region } }) => (
         <Link url={url}>{url.replace(/https:\/\//, '')}</Link>
       </React.Fragment>
     ))}
-    <p>{summary}</p>
+    <p css={css`
+      ${mobileOnly(`margin-top: 24px;`)}
+    `}>{summary}</p>
   </section>
 );
 
@@ -194,7 +220,7 @@ const Education = ({ education }) => (
   </section>
 );
 
-const SKILLS_BREAL_POINT = `@media screen and (min-width: 840px), (min-width: 402px) and (max-width: ${BREAK_POINT_SM}px)`;
+const SKILLS_BREAL_POINT = `@media screen and (min-width: 678px), (min-width: 402px) and (max-width: ${BREAK_POINT_SM}px)`;
 
 const Skills = ({ skills }) => (
   <section>
