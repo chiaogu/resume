@@ -116,26 +116,23 @@ const GlobalStyle = () => (
       a {
         color: #000;
         background-color: #fff;
+        outline: none;
+        border: none;
+        box-shadow: none;
+        -webkit-tap-highlight-color: transparent;
         
         &.${CLASS_NAME_DARK} {
           color: #fff;
           background-color: #000;
         }
         
-        &:hover,
-        &:focus {
-          outline: none;
-          filter: invert(1);
+        @media (hover: hover) {
+          :hover,
+          :focus {
+            outline: none;
+            filter: invert(1);
+          }
         }
-      }
-      
-      button {
-        color: inherit;
-        background: unset;
-        outline: none;
-        border: none;
-        box-shadow: none;
-        -webkit-tap-highlight-color: transparent;
       }
     `}
   />
