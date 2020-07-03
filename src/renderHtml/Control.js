@@ -10,7 +10,8 @@ const script = (darkModeToggleId, printButtonId, bgColors) => {
   const printButton = document.getElementById(printButtonId);
   let isAnimating = false;
   let isDarkMode = false;
-  let transitionFrame = bgColors.length - 1;
+  const maxFrame = bgColors.length - 1;
+  let transitionFrame = maxFrame;
   
   const preloadBgColors = () => {
     bgColors.forEach(img => new Image().src = img);
@@ -19,17 +20,22 @@ const script = (darkModeToggleId, printButtonId, bgColors) => {
   const animateColor = () => {
     isAnimating = true;
     transitionFrame += (isDarkMode ? -1 : 1);
-    if(!bgColors[transitionFrame]) console.log(transitionFrame, bgColors.length)
+    transitionFrame = Math.max(Math.min(transitionFrame, maxFrame), 0)
     document.documentElement.style.backgroundImage = `url(${bgColors[transitionFrame]})`;
-    transitionFrame = Math.max(Math.min(transitionFrame, bgColors.length - 1), 0)
-    const canStop = transitionFrame === (isDarkMode ? 0 : bgColors.length - 1);
+    
+    const shouldInvert = isDarkMode ? (transitionFrame < maxFrame / 2) : (transitionFrame >= maxFrame / 2);
+    if(shouldInvert) {
+      document.body.style.color = isDarkMode ? '#fff' : '#000';
+      darkModeToggle.style.filter = isDarkMode ? 'invert(1)' : 'unset';
+      printButton.style.filter = isDarkMode ? 'invert(1)' : 'unset';
+    }
+    
+    const canStop = transitionFrame === (isDarkMode ? 0 : maxFrame);
     if(!canStop) {
       setTimeout(() => requestAnimationFrame(animateColor), 48);
     } else {
       isAnimating = false;
-      document.body.style.color = isDarkMode ? '#fff' : '#000';
-      darkModeToggle.style.filter = isDarkMode ? 'invert(1)' : 'unset';
-      printButton.style.filter = isDarkMode ? 'invert(1)' : 'unset';
+      document.documentElement.style.background = isDarkMode ? '#000' : '#fff';
     }
   };
   
