@@ -64,6 +64,10 @@ const Control = () => {
           top: 8px;
           right: 8px;
         }
+        
+        @media print {
+          display: none;
+        }
       `}>
         <a id={darkModeToggleId} css={buttonStyle}>O</a>
         <a id={printButtonId} css={buttonStyle}>X</a>

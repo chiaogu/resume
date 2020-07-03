@@ -2,6 +2,8 @@
 import { css, jsx, Global } from '@emotion/core';
 import { mobileOnly, CLASS_NAME_DARK } from './shared';
 
+const A4_HEIGHT = 1122;
+
 const GlobalStyle = () => (
   <Global
     styles={css`
@@ -23,6 +25,10 @@ const GlobalStyle = () => (
         src: url('./LetterGothicStd-Bold.otf');
       }
       
+      @page {
+        margin: 69px 45px 63px 45px;
+      }
+      
       html {
         background-color: #fff;
         
@@ -39,21 +45,24 @@ const GlobalStyle = () => (
             background-color: rgba(255,255,255,.99);
           }
         }
+        
+        @media screen {
+          zoom: 1.3;
+        }
       }
       
       body {
         width: 794px;
         max-width: 100%;
-        min-height: 1122px;
-        margin: auto;
+        min-height: ${A4_HEIGHT}px;
         padding: 69px 45px 63px 45px;
+        margin: auto;
         box-sizing: border-box;
         color: #000;
         font-family: Fira Sans, sans-serif;
         font-size: 12px;
         line-height: 1.67;
         transition: padding 0.3s;
-        zoom: 1.3;
         ::-webkit-scrollbar {
             width: 0;
         } 
@@ -64,6 +73,12 @@ const GlobalStyle = () => (
         
         ${mobileOnly(`padding: 69px 20px;`)}
         
+        @media print {
+          height: 0;
+          min-height: 0;
+          padding: 0;
+          overflow: visible;
+        }
       }
       
       section {
