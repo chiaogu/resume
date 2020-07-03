@@ -22,5 +22,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "uuid": "^8.2.0"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "rgbquant": "^1.1.2"
   }
 }

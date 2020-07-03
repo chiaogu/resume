@@ -23,13 +23,16 @@ const GlobalStyle = () => (
         src: url('./LetterGothicStd-Bold.otf');
       }
       
+      html {
+        background-color: #fff;
+      }
+      
       body {
         width: 794px;
         max-width: 100%;
         min-height: 1122px;
         margin: auto;
         padding: 69px 45px 63px 45px;
-        background: #fff;
         /* border: 1px solid #000; */
         box-sizing: border-box;
         color: #000;
