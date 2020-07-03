@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, Global } from '@emotion/core';
-import { mobileOnly } from './shared';
+import { mobileOnly, CLASS_NAME_DARK } from './shared';
 
 const GlobalStyle = () => (
   <Global
@@ -25,6 +25,20 @@ const GlobalStyle = () => (
       
       html {
         background-color: #fff;
+        
+        * ::selection {
+          color: rgba(255,255,255,.99);
+          background-color: rgba(0,0,0,.99);
+        }
+        
+        &.${CLASS_NAME_DARK} {
+          background-color: #000;
+          
+          * ::selection {
+            color: rgba(0,0,0,.99);
+            background-color: rgba(255,255,255,.99);
+          }
+        }
       }
       
       body {
@@ -33,7 +47,6 @@ const GlobalStyle = () => (
         min-height: 1122px;
         margin: auto;
         padding: 69px 45px 63px 45px;
-        /* border: 1px solid #000; */
         box-sizing: border-box;
         color: #000;
         font-family: Fira Sans, sans-serif;
@@ -44,7 +57,13 @@ const GlobalStyle = () => (
         ::-webkit-scrollbar {
             width: 0;
         } 
+        
+        &.${CLASS_NAME_DARK} {
+          color: #fff;
+        }
+        
         ${mobileOnly(`padding: 69px 20px;`)}
+        
       }
       
       section {
@@ -95,10 +114,28 @@ const GlobalStyle = () => (
       }
       
       a {
-        color: inherit;
-        :hover {
-          font-weight: bold;
+        color: #000;
+        background-color: #fff;
+        
+        &.${CLASS_NAME_DARK} {
+          color: #fff;
+          background-color: #000;
         }
+        
+        &:hover,
+        &:focus {
+          outline: none;
+          filter: invert(1);
+        }
+      }
+      
+      button {
+        color: inherit;
+        background: unset;
+        outline: none;
+        border: none;
+        box-shadow: none;
+        -webkit-tap-highlight-color: transparent;
       }
     `}
   />
