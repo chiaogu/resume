@@ -2,38 +2,8 @@
 import { css, jsx } from '@emotion/core';
 import React from 'react';
 import { v4 as uuid } from 'uuid'
-import { createCanvas, createImageData } from 'canvas';
-import RgbQuant from 'rgbquant';
 import { BREAK_POINT_SM, PDF_FILE_NAME } from './shared';
-import { controlScript } from './clientScript';
-
-function generateBackground() {
-  const SIZE = 8;
-  const canvas = createCanvas(SIZE, SIZE);
-  const ctx = canvas.getContext('2d');
-  const imageData = createImageData(SIZE, SIZE);
-  const buf32 = new Uint32Array(imageData.data.buffer);
-	const rgbQuant = new RgbQuant({
-    colors: 2,
-    palette: [[0,0,0], [255,255,255]],
-    dithKern: 'Atkinson',
-  });
-  const colors = [];
-  for(let i = 0; i <= 255; i += 24){
-    ctx.fillStyle = `rgb(${i},${i},${i})`;
-    ctx.fillRect(0, 0, SIZE, SIZE);
-    rgbQuant.sample(canvas);
-    buf32.set(new Uint32Array(rgbQuant.reduce(canvas).buffer));
-    ctx.putImageData(imageData, 0, 0);
-    colors.push(canvas.toDataURL());
-  }
-  return colors;
-}
-
-const Script = ({ darkModeToggleId, printButtonId }) => {
-  const scriptHtml = `(${controlScript.toString()})('${darkModeToggleId}', '${printButtonId}', ${JSON.stringify(generateBackground())});`;
-  return <script dangerouslySetInnerHTML={{ __html: scriptHtml }}></script>;
-};
+import ControlScript from './ControlScript';
 
 const Button = props => (
   <a 
@@ -66,6 +36,7 @@ const Button = props => (
       background-position: center center;
       background-size: contain;
       background-image: url(${props.icon});
+      pointer-events: none;
     `}></div>
   </a>
 );
@@ -110,7 +81,7 @@ const Control = () => {
           icon="./icon-download.svg"
         />
       </div>
-      <Script {...{ darkModeToggleId, printButtonId }}/>
+      <ControlScript {...{ darkModeToggleId, printButtonId }}/>
     </>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import GlobalStyle from './GlobalStyle';
 import Content from './Content';
 import Control from './Control';
+import Tracking from './Tracking';
 
 const Head = ({ resume: { basics: { name, summary, label } }, config: { isInlineFont }}) => {
   const summarySentances = summary.split('. ');
@@ -14,6 +15,7 @@ const Head = ({ resume: { basics: { name, summary, label } }, config: { isInline
       <meta property="og:description" content={description}/>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
       <GlobalStyle isInlineFont={isInlineFont}/>
+      <Tracking/>
     </head>
   )
 };

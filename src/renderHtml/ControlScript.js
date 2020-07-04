@@ -1,4 +1,9 @@
-export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
+import React from 'react';
+import { createCanvas, createImageData } from 'canvas';
+import RgbQuant from 'rgbquant';
+import { RunOnClient } from './shared';
+
+const script = (darkModeToggleId, printButtonId, bgColors) => {
   const CLASS_NAME_DARK = 'dark';
   const FAVICON_ID = 'favicon';
   
@@ -50,6 +55,10 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
     if(isAnimating) return;
     isDarkMode = !isDarkMode;
     animateColor(isDarkMode);
+    gtag('set', { 'dark_mode': isDarkMode });
+    gtag('event', isDarkMode ? 'enable' : 'disable', {
+      'event_category': 'set_dark_mode',
+    });
   }
   
   const clickByKeyboard = (event, callback) => {
@@ -65,6 +74,12 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
       const blur = ({ target }) => target.blur();
       a.addEventListener('mouseup', blur);
       a.addEventListener('mouseleave', blur);
+      a.addEventListener('click', ({ target }) => {
+        if(!target.href) return;
+        gtag('event', target.href, {
+          'event_category': 'click_link',
+        });
+      });
     });
     darkModeToggle.addEventListener('click', toggleDarkMode);
     darkModeToggle.addEventListener('keydown', event => clickByKeyboard(event, toggleDarkMode));
@@ -75,3 +90,30 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
   preloadBackground();
   attachEventListener();
 }
+
+function generateBackground() {
+  const SIZE = 8;
+  const canvas = createCanvas(SIZE, SIZE);
+  const ctx = canvas.getContext('2d');
+  const imageData = createImageData(SIZE, SIZE);
+  const buf32 = new Uint32Array(imageData.data.buffer);
+	const rgbQuant = new RgbQuant({
+    colors: 2,
+    palette: [[0,0,0], [255,255,255]],
+    dithKern: 'Atkinson',
+  });
+  const colors = [];
+  for(let i = 0; i <= 255; i += 24){
+    ctx.fillStyle = `rgb(${i},${i},${i})`;
+    ctx.fillRect(0, 0, SIZE, SIZE);
+    rgbQuant.sample(canvas);
+    buf32.set(new Uint32Array(rgbQuant.reduce(canvas).buffer));
+    ctx.putImageData(imageData, 0, 0);
+    colors.push(canvas.toDataURL());
+  }
+  return colors;
+}
+
+export default function ControlScript({ darkModeToggleId, printButtonId }) {
+  return <RunOnClient func={script} args={[darkModeToggleId, printButtonId, generateBackground()]}/>;
+};

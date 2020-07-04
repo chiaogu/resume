@@ -24,3 +24,15 @@ export const DotOrWrap = () => (
     `}/>
   </>
 );
+
+export const RunOnClient = ({ func, args }) => {
+  const argsString = args.map(arg => {
+    switch(typeof arg) {
+    case 'string': return `'${arg}'`;
+    case 'object': return JSON.stringify(arg);
+    default: return arg;
+    }
+  }).join(',');
+  const scriptHtml = `(${func.toString()})(${argsString});`;
+  return <script dangerouslySetInnerHTML={{ __html: scriptHtml }}></script>;
+}
