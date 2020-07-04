@@ -94,7 +94,7 @@ const Control = () => {
       `}>
         <Button
           id={darkModeToggleId}
-          tabindex="1"
+          tabIndex="1"
           icon="./icon-dark.svg"
           css={css`
             &.dark > div{
@@ -104,7 +104,7 @@ const Control = () => {
         />
         <Button
           id={printButtonId}
-          tabindex="1"
+          tabIndex="1"
           href={`./${PDF_FILE_NAME}`}
           download
           icon="./icon-download.svg"

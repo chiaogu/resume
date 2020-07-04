@@ -1,14 +1,26 @@
 export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
   const CLASS_NAME_DARK = 'dark';
+  const FAVICON_ID = 'favicon';
+  
   const darkModeToggle = document.getElementById(darkModeToggleId);
   const printButton = document.getElementById(printButtonId);
   let isAnimating = false;
   let isDarkMode = false;
   const maxFrame = bgColors.length - 1;
   let transitionFrame = maxFrame;
-  
-  const preloadBgColors = () => {
+
+  const preloadBackground = () => {
     bgColors.forEach(img => new Image().src = img);
+  }
+  
+  const appendFavicon = () => {
+    const imageData = bgColors[2 + Math.floor(Math.random() * (bgColors.length - 3))];
+    const link = document.createElement('link');
+    link.id = FAVICON_ID;
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = imageData;
+    document.head.appendChild(link);
   }
   
   const animateColor = () => {
@@ -17,6 +29,7 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
     transitionFrame = Math.max(Math.min(transitionFrame, maxFrame), 0)
     document.documentElement.style.backgroundImage = `url(${bgColors[transitionFrame]})`;
     document.querySelectorAll('a').forEach(a => a.style.backgroundImage = `url(${bgColors[transitionFrame]})`);
+    document.getElementById(FAVICON_ID).href = bgColors[transitionFrame];
     
     const shouldInvert = isDarkMode ? (transitionFrame < maxFrame / 2) : (transitionFrame >= maxFrame / 2);
     if(shouldInvert) {
@@ -58,6 +71,7 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
     printButton.addEventListener('keydown', event => clickByKeyboard(event, event.target.click));
   }
   
-  preloadBgColors();
+  appendFavicon();
+  preloadBackground();
   attachEventListener();
 }
