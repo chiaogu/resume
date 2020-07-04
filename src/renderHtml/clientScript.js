@@ -48,10 +48,14 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
   };
   
   const attachEventListener = () => {
-    document.querySelectorAll('a').forEach(a => a.addEventListener('click', ({ target }) => target.blur()));
+    document.querySelectorAll('a').forEach(a => {
+      const blur = ({ target }) => target.blur();
+      a.addEventListener('mouseup', blur);
+      a.addEventListener('mouseleave', blur);
+    });
     darkModeToggle.addEventListener('click', toggleDarkMode);
     darkModeToggle.addEventListener('keydown', event => clickByKeyboard(event, toggleDarkMode));
-    printButton.addEventListener('keydown', event => clickByKeyboard(event, event.target.click()));
+    printButton.addEventListener('keydown', event => clickByKeyboard(event, event.target.click));
   }
   
   preloadBgColors();

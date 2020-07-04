@@ -30,26 +30,49 @@ function generateBackground() {
   return colors;
 }
 
+const Script = ({ darkModeToggleId, printButtonId }) => {
+  const scriptHtml = `(${controlScript.toString()})('${darkModeToggleId}', '${printButtonId}', ${JSON.stringify(generateBackground())});`;
+  return <script dangerouslySetInnerHTML={{ __html: scriptHtml }}></script>;
+};
+
+const Button = props => (
+  <a 
+    {...props}
+    css={css`
+      width: 36px;
+      height: 36px;
+      margin: 0 0 8px 8px;
+      font-size: 1em;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      cursor: pointer;
+      
+      &:active {
+        filter: invert(1);
+      }
+      
+      &.dark > div{
+        filter: invert(1);
+      }
+  `}
+  >
+    <div css={css`
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      background-image: url(${props.icon});
+    `}></div>
+  </a>
+);
+
 const Control = () => {
   const darkModeToggleId = uuid();
   const printButtonId = uuid();
-  const buttonStyle = css`
-    width: 36px;
-    height: 36px;
-    margin: 0 0 8px 8px;
-    font-size: 1em;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    cursor: pointer;
-    
-    &:active {
-      filter: invert(1);
-    }
-  `;
-  const scriptHtml = `(${controlScript.toString()})('${darkModeToggleId}', '${printButtonId}', ${JSON.stringify(generateBackground())});`;
   
   return (
     <>
@@ -69,16 +92,25 @@ const Control = () => {
           display: none;
         }
       `}>
-        <a id={darkModeToggleId} css={buttonStyle} tabindex="1">O</a>
-        <a
+        <Button
+          id={darkModeToggleId}
+          tabindex="1"
+          icon="./icon-dark.svg"
+          css={css`
+            &.dark > div{
+              background-image: url('./icon-light.svg');
+            }
+          `}
+        />
+        <Button
           id={printButtonId}
-          css={buttonStyle}
           tabindex="1"
           href={`./${PDF_FILE_NAME}`}
           download
-        >X</a>
+          icon="./icon-download.svg"
+        />
       </div>
-      <script dangerouslySetInnerHTML={{ __html: scriptHtml }}></script>
+      <Script {...{ darkModeToggleId, printButtonId }}/>
     </>
   );
 }
