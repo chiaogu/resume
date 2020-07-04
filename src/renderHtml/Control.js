@@ -4,7 +4,7 @@ import React from 'react';
 import { v4 as uuid } from 'uuid'
 import { createCanvas, createImageData } from 'canvas';
 import RgbQuant from 'rgbquant';
-import { BREAK_POINT_SM } from './shared';
+import { BREAK_POINT_SM, PDF_FILE_NAME } from './shared';
 import { controlScript } from './clientScript';
 
 function generateBackground() {
@@ -69,8 +69,14 @@ const Control = () => {
           display: none;
         }
       `}>
-        <a id={darkModeToggleId} css={buttonStyle}>O</a>
-        <a id={printButtonId} css={buttonStyle}>X</a>
+        <a id={darkModeToggleId} css={buttonStyle} tabindex="1">O</a>
+        <a
+          id={printButtonId}
+          css={buttonStyle}
+          tabindex="1"
+          href={`./${PDF_FILE_NAME}`}
+          download
+        >X</a>
       </div>
       <script dangerouslySetInnerHTML={{ __html: scriptHtml }}></script>
     </>

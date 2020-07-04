@@ -33,10 +33,27 @@ export const controlScript = (darkModeToggleId, printButtonId, bgColors) => {
     }
   };
   
-  preloadBgColors();
-  darkModeToggle.addEventListener('click', () => {
+  const toggleDarkMode = () => {
     if(isAnimating) return;
     isDarkMode = !isDarkMode;
     animateColor(isDarkMode);
-  });
+  }
+  
+  const clickByKeyboard = (event, callback) => {
+    const { code } = event;
+    if (code === 'Space' || code === 'Enter') {
+      event.preventDefault();
+      callback();
+    }
+  };
+  
+  const attachEventListener = () => {
+    document.querySelectorAll('a').forEach(a => a.addEventListener('click', ({ target }) => target.blur()));
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+    darkModeToggle.addEventListener('keydown', event => clickByKeyboard(event, toggleDarkMode));
+    printButton.addEventListener('keydown', event => clickByKeyboard(event, event.target.click()));
+  }
+  
+  preloadBgColors();
+  attachEventListener();
 }

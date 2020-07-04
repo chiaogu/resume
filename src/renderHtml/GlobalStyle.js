@@ -107,7 +107,7 @@ const GlobalStyle = ({ isInlineFont }) => (
         line-height: 1.2;
         height: 40px;
         font-size: 3em;
-        font-family: Letter Gothic Std;
+        font-family: Letter Gothic Std, monospace;
       }
       
       h2 {

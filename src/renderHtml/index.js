@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import puppeteer from 'puppeteer';
 import Html from './Html';
-import { A4_WIDTH, A4_HEIGHT } from './shared';
+import { A4_WIDTH, A4_HEIGHT, PDF_FILE_NAME } from './shared';
 
 function renderHtml(resume, config) {
   const result = ReactDOMServer.renderToString(<Html {...{ config, resume }}/>);
@@ -30,7 +30,7 @@ async function printPDF(outputFolder, html) {
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: 'load' })
   await page.pdf({
-    path: path.join(outputFolder, 'IanChiao.pdf'),
+    path: path.join(outputFolder, PDF_FILE_NAME),
     format: 'A4',
     width: A4_WIDTH,
     height: A4_HEIGHT
