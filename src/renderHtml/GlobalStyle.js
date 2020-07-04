@@ -1,28 +1,38 @@
 /** @jsx jsx */
 import { css, jsx, Global } from '@emotion/core';
-import { mobileOnly, CLASS_NAME_DARK } from './shared';
+import { mobileOnly, CLASS_NAME_DARK, A4_WIDTH, A4_HEIGHT } from './shared';
+import fs from 'fs-extra';
+import path from 'path';
 
-const A4_HEIGHT = 1122;
+const getFontUrl = (fileName, extension, isBase64) => {
+  if(!isBase64) {
+    return `./${fileName}.${extension}`;
+  } else {
+    const fontFile = path.join(__dirname, '..', '..', 'assets', `${fileName}.${extension}`);
+    const fontData = fs.readFileSync(fontFile).toString('base64');
+    return `data:application/x-font-${extension};charset=utf-8;base64,${fontData}`
+  }
+}
 
-const GlobalStyle = () => (
+const GlobalStyle = ({ isInlineFont }) => (
   <Global
     styles={css`
       @font-face {
         font-family: 'Fira Sans';
         font-weight: normal;
-        src: url('./FiraSans-Regular.ttf');
+        src: url(${getFontUrl('FiraSans-Regular', 'ttf', isInlineFont)});
       }
 
       @font-face {
         font-family: 'Fira Sans';
         font-weight: bold;
-        src: url('./FiraSans-Medium.ttf');
+        src: url(${getFontUrl('FiraSans-Medium', 'ttf', isInlineFont)});
       }
       
       @font-face {
         font-family: 'Letter Gothic Std';
         font-weight: bold;
-        src: url('./LetterGothicStd-Bold.otf');
+        src: url(${getFontUrl('LetterGothicStd-Bold', 'otf', isInlineFont)});
       }
       
       @page {
@@ -48,11 +58,12 @@ const GlobalStyle = () => (
         
         @media screen {
           zoom: 1.3;
+          overflow: visible;
         }
       }
       
       body {
-        width: 794px;
+        width: ${A4_WIDTH}px;
         max-width: 100%;
         min-height: ${A4_HEIGHT}px;
         padding: 69px 45px 63px 45px;

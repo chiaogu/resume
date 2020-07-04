@@ -87,6 +87,6 @@ ${resume.skills.map(skill).join('  \n')}
   `.trim();
 }
 
-export default function writeMarkdown(outputFolder, resume) {
-  fs.writeFileSync(path.join(outputFolder, 'README.md'), renderMarkdown(resume));
+export default async function writeMarkdown(outputFolder, resume) {
+  await fs.writeFile(path.join(outputFolder, 'README.md'), renderMarkdown(resume));
 }

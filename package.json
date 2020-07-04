@@ -19,6 +19,7 @@
     "html-minifier": "^4.0.0",
     "live-server": "^1.2.1",
     "nodemon": "^2.0.4",
+    "puppeteer": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "uuid": "^8.2.0"
