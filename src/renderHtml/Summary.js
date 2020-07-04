@@ -9,7 +9,7 @@ import {
 
 const Summary = ({ summary, email, profiles, location: { city, region } }) => (
   <section css={css`margin-top: 8px;`}>
-    {city} {region}
+    <span>{city} {region}</span>
     <DotOrWrap/>
     <a href={`mailto:${email}`}>{email}</a>
     {profiles.map(({ url }) => (

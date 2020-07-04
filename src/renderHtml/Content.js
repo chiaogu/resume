@@ -12,19 +12,16 @@ import Skills from './Skills';
 export const Flex = ({ children }) => (
   <div css={css`
     display: flex;
-    margin: 0 -13px;
+    justify-content: space-between;
     ${mobileOnly(`
-      margin: 0;
       flex-direction: column;
     `)}
   `}>
     {React.Children.map(children, child => (
       <div css={css`
-        margin: 0 13px;
-        flex: 1 1 50%;
+        width: calc(50% - 10px);
         ${mobileOnly(`
-          margin: 0;
-          flex: unset;
+          width: 100%;
         `)}
       `}>{child}</div>
     ))}

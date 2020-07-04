@@ -35,10 +35,6 @@ const GlobalStyle = ({ isInlineFont }) => (
         src: url(${getFontUrl('LetterGothicStd-Bold', 'otf', isInlineFont)});
       }
       
-      @page {
-        margin: 69px 45px 63px 45px;
-      }
-      
       html {
         background-color: #fff;
         
@@ -62,11 +58,15 @@ const GlobalStyle = ({ isInlineFont }) => (
         }
       }
       
+      @page {
+        margin: 63px 45px;
+      }
+      
       body {
         width: ${A4_WIDTH}px;
         max-width: 100%;
         min-height: ${A4_HEIGHT}px;
-        padding: 69px 45px 63px 45px;
+        padding: 63px 45px;
         margin: auto;
         box-sizing: border-box;
         color: #000;
@@ -82,7 +82,7 @@ const GlobalStyle = ({ isInlineFont }) => (
           color: #fff;
         }
         
-        ${mobileOnly(`padding: 69px 20px;`)}
+        ${mobileOnly(`padding: 53px 20px 63px 20px;`)}
         
         @media print {
           height: 0;
@@ -103,11 +103,14 @@ const GlobalStyle = ({ isInlineFont }) => (
       }
       
       h1 {
-        margin: 0 0 0 -5px;
-        line-height: 1.2;
-        height: 40px;
+        margin: 4px 44px 8.5px -5px;
+        line-height: 1;
         font-size: 3em;
         font-family: Letter Gothic Std, monospace;
+        
+        @media screen and (max-width: 356px) {
+          font-size: 2.5em;
+        }
       }
       
       h2 {
@@ -126,7 +129,7 @@ const GlobalStyle = ({ isInlineFont }) => (
       ul {
         margin: 0;
         list-style-type: none;
-        padding-inline-start: 1em;
+        padding-left: 1em;
       }
       
       li {
