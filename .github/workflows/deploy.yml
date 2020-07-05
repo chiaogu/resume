@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: npm ci
+      - run: npm run build
+      - run: cp output/README.md README.md
+      - uses: stefanzweifel/git-auto-commit-action@v4.4.0
+        with:
+          commit_message: update README.md
+      - uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: output
