@@ -6,7 +6,7 @@
     "email": "chiaogu@gmail.com",
     "phone": "",
     "website": "",
-    "summary": "- 7+ years of software developement experience designing, developing website and mobile apps for differnt industies like music, ecommerce, messenging and BaaS.- Pay attension at both UX and DX - Resolving problems by not only engineering but also cross-team coordination- Seeking an opportunity to solve people's problem and multiply team’s output    ",
+    "summary": "7 years of software experience developing web, mobile, and desktop applications for various industries. Solid knowledge of web development and continuously adopt new technologies. Take care of both user experience and developer experience. Building things that people can enjoy or make their life easier.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -23,17 +23,62 @@
       {
         "network": "LinkedIn",
         "username": "chiaogu",
-        "url": "https://www.linkedin.com/in/chiaogu/"
+        "url": "https://linkedin.com/in/chiaogu"
       }
     ]
   },
   "work": [
     {
-      "company": "",
-      "position": "",
+      "company": "Positive Grid",
+      "position": "Lead Frontend Engineer",
+      "website": "https://www.positivegrid.com",
+      "startDate": "2017/10",
+      "endDate": null,
+      "summary": "",
+      "highlights": [
+        "Developed graphic intensive and highly interactive UI for music software using React, Canvas, and modern web technologies.",
+        "Optimized rendering performance, reduced startup time by 10 seconds, and decreased CPU consumption by 30%.",
+        "Implemented landing pages and improved accessibility and SEO ranking for an eCommerce site with 40k+ daily unique visitors.",
+        "Revamped checkout process from scratch, responsible for requirements gathering, technical planning, and implementation.",
+        "Migrated legacy code from AngularJS to React and refined state management to Redux pattern using Hooks and Context API.",
+        "Applied test-driven development using Jest and modularized code to improve debuggability and testability.",
+        "Eliminated time-waste by automating repetitive work and integrated into CI/CD pipeline.",
+        "Optimized data tracking and provided technical feedback during discussions to maximize design possibilities.",
+        "Responsible for frontend interviews, onboarding, and PR reviews; constantly refined the process.",
+        "Arranged weekly sharing meetings, workshops, and study groups; helped team members learn and inspire each other.",
+        "Presented topics including IoT, GameDev, WebAudio, and E2E testing."
+      ]
+    },
+    {
+      "company": "8 Interactive",
+      "position": "Frontend Engineer",
+      "website": "https://no8.ai/home-en.html",
+      "startDate": "2016/11",
+      "endDate": "2017/09",
+      "summary": "",
+      "highlights": [
+        "Implemented webhook handler to process messages from external services using Serverless framework and AWS Lambda.",
+        "Architected the web app for a messaging platform; implemented features ranging from chat room to data visualization using Angular, RxJS, MQTT, Express, and Handlebars."
+      ]
+    },
+    {
+      "company": "Herxun",
+      "position": "Android Engineer",
       "website": "",
-      "startDate": "",
-      "endDate": "",
+      "startDate": "2014/07",
+      "endDate": "2016/11",
+      "summary": "",
+      "highlights": [
+        "Designed and developed Android SDK for an IoT management service; maintained tutorials, documents, and example apps.",
+        "Developed various types of Android apps including social feed, messaging, camera filter, calendar, and location-based service; push UX and graphics to the limit without sacrificing the performance."
+      ]
+    },
+    {
+      "company": "Union Technology",
+      "position": "Android Engineer",
+      "website": "",
+      "startDate": "2013/09",
+      "endDate": "2014/01",
       "summary": "",
       "highlights": []
     }
@@ -42,28 +87,44 @@
     {
       "institution": "Fu Jen Catholic University",
       "area": "Computer Science",
-      "studyType": "Bachelor",
-      "startDate": "2009-09-01",
-      "endDate": "2014-02-01"
+      "studyType": "B.S.",
+      "startDate": "2009/09/01",
+      "endDate": "2014/02/01"
     }
   ],
   "projects": [
     {
-      "name": "",
-      "description": "",
-      "highlights": [],
-      "keywords": [],
-      "startDate": "",
-      "endDate": "",
-      "roles": ""
+      "name": "Planetfall",
+      "description": "A 10kb planetary exploration game designed and developed in one month using vanilla javascript, Canvas API, and Rollup.",
+      "url": "https://github.com/chiaogu/planetfall",
+      "endDate": "2018/09"
+    },
+    {
+      "name": "Synth",
+      "description": "A synthesizer builder for you to build and share your own instrument, created using Tone.js, React, Redux, and Firebase.",
+      "url": "https://github.com/chiaogu/synth",
+      "endDate": "2018/04"
+    },
+    {
+      "name": "Doubleloop",
+      "description": "A virtual drum pad that can record and share tracks, created using Angular, WebAudio, and Firebase.",
+      "url": "https://github.com/chiaogu/doubleloop",
+      "endDate": "2017/08"
+    },
+    {
+      "name": "Mute Spotify Ads",
+      "description": "A Spotify player that automatically mute ads, messing around with Spotify Web API, Next.js, and Electron.",
+      "url": "https://github.com/chiaogu/mute-spotify-ads",
+      "endDate": "2020/02"
     }
   ],
   "awards": [
     {
-      "title": "Silver Award in Software category",
-      "date": "",
-      "awarder": "YSED Award",
-      "summary": "Super Drop Interactive Waterfall from 358 projects"
+      "title": "1st place in Mobile category",
+      "date": "2018/09",
+      "awarder": "Js13kGames",
+      "website": "https://2018.js13kgames.com/#winners-mobile",
+      "summary": "Won the 1st place in a game dev competition with a game written in javascript called Planetfall."
     }
   ],
   "skills": [
@@ -96,7 +157,6 @@
         "Webpack",
         "Jest",
         "Puppeteer",
-        "Testing Library",
         "Storybook"
       ]
     }

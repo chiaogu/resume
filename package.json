@@ -4,7 +4,7 @@
   "description": "",
   "author": "",
   "scripts": {
-    "build": "",
+    "build": "babel-node src/main.js",
     "dev": "concurrently \"nodemon --exec babel-node src/main.js\" \"live-server output\""
   },
   "devDependencies": {
@@ -14,11 +14,18 @@
     "@babel/preset-react": "^7.10.1",
     "@emotion/core": "^10.0.28",
     "concurrently": "^5.2.0",
+    "dateformat": "^3.0.3",
     "fs-extra": "^9.0.0",
     "html-minifier": "^4.0.0",
     "live-server": "^1.2.1",
     "nodemon": "^2.0.4",
+    "puppeteer": "^5.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "uuid": "^8.2.0"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "rgbquant": "^1.1.2"
   }
 }
