@@ -66,10 +66,10 @@ const Control = () => {
         <Button
           id={darkModeToggleId}
           tabIndex="1"
-          icon="./icon-dark.svg"
+          icon="./assets/icon-dark.svg"
           css={css`
             &.dark > div{
-              background-image: url('./icon-light.svg');
+              background-image: url('./assets/icon-light.svg');
             }
           `}
         />
@@ -78,7 +78,7 @@ const Control = () => {
           tabIndex="1"
           href={`./${PDF_FILE_NAME}`}
           download
-          icon="./icon-download.svg"
+          icon="./assets/icon-download.svg"
         />
       </div>
       <ControlScript {...{ darkModeToggleId, printButtonId }}/>

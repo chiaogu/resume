@@ -6,7 +6,7 @@ import path from 'path';
 
 const getFontUrl = (fileName, extension, isBase64) => {
   if(!isBase64) {
-    return `./${fileName}.${extension}`;
+    return `./assets/${fileName}.${extension}`;
   } else {
     const fontFile = path.join(__dirname, '..', '..', 'assets', `${fileName}.${extension}`);
     const fontData = fs.readFileSync(fontFile).toString('base64');
@@ -53,7 +53,7 @@ const GlobalStyle = ({ isInlineFont }) => (
         }
         
         @media screen {
-          zoom: 1.3;
+          zoom: 1.29;
           overflow: visible;
         }
       }
@@ -70,8 +70,9 @@ const GlobalStyle = ({ isInlineFont }) => (
         margin: auto;
         box-sizing: border-box;
         color: #000;
-        font-family: Fira Sans, sans-serif;
         font-size: 12px;
+        font-family: Fira Sans, sans-serif;
+        -webkit-font-smoothing: antialiased;
         line-height: 1.67;
         transition: padding 0.3s;
         ::-webkit-scrollbar {
