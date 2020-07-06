@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core';
 import React from 'react';
 import { BREAK_POINT_SM } from './shared';
 
-const SKILLS_BREAL_POINT = `@media screen and (min-width: 678px), (min-width: 402px) and (max-width: ${BREAK_POINT_SM}px)`;
+const SKILLS_BREAL_POINT = `@media screen and (min-width: 808px), (min-width: 402px) and (max-width: ${BREAK_POINT_SM}px)`;
 
 const Break = ({ skills }) => (
   <p css={css`

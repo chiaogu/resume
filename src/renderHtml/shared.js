@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core';
 import React from 'react';
 import dateFormat from 'dateformat';
 
+export const BG_TILE_SIZE = 8;
 export const A4_WIDTH = 794;
 export const A4_HEIGHT = 1122;
 export const BREAK_POINT_SM = 576;

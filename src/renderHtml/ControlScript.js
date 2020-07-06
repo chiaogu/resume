@@ -1,7 +1,7 @@
 import React from 'react';
 import { createCanvas, createImageData } from 'canvas';
 import RgbQuant from 'rgbquant';
-import { RunOnClient } from './shared';
+import { RunOnClient, BG_TILE_SIZE } from './shared';
 
 const script = (darkModeToggleId, printButtonId, bgColors) => {
   const CLASS_NAME_DARK = 'dark';
@@ -92,10 +92,9 @@ const script = (darkModeToggleId, printButtonId, bgColors) => {
 }
 
 function generateBackground() {
-  const SIZE = 8;
-  const canvas = createCanvas(SIZE, SIZE);
+  const canvas = createCanvas(BG_TILE_SIZE, BG_TILE_SIZE);
   const ctx = canvas.getContext('2d');
-  const imageData = createImageData(SIZE, SIZE);
+  const imageData = createImageData(BG_TILE_SIZE, BG_TILE_SIZE);
   const buf32 = new Uint32Array(imageData.data.buffer);
 	const rgbQuant = new RgbQuant({
     colors: 2,
@@ -105,7 +104,7 @@ function generateBackground() {
   const colors = [];
   for(let i = 0; i <= 255; i += 24){
     ctx.fillStyle = `rgb(${i},${i},${i})`;
-    ctx.fillRect(0, 0, SIZE, SIZE);
+    ctx.fillRect(0, 0, BG_TILE_SIZE, BG_TILE_SIZE);
     rgbQuant.sample(canvas);
     buf32.set(new Uint32Array(rgbQuant.reduce(canvas).buffer));
     ctx.putImageData(imageData, 0, 0);
