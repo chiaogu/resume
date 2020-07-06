@@ -53,7 +53,6 @@ const GlobalStyle = ({ isInlineFont }) => (
         }
         
         @media screen {
-          zoom: 1.29;
           overflow: visible;
         }
       }
@@ -63,14 +62,14 @@ const GlobalStyle = ({ isInlineFont }) => (
       }
       
       body {
-        width: ${A4_WIDTH}px;
+        width: 1024px;
         max-width: 100%;
         min-height: ${A4_HEIGHT}px;
-        padding: 63px 45px;
+        padding: 82px 44px;
         margin: auto;
         box-sizing: border-box;
         color: #000;
-        font-size: 12px;
+        font-size: 15.6px;
         font-family: Fira Sans, sans-serif;
         -webkit-font-smoothing: antialiased;
         line-height: 1.67;
@@ -83,9 +82,11 @@ const GlobalStyle = ({ isInlineFont }) => (
           color: #fff;
         }
         
-        ${mobileOnly(`padding: 53px 20px 63px 20px;`)}
+        ${mobileOnly(`padding: 63px 24px 63px 24px;`)}
         
         @media print {
+          width: ${A4_WIDTH}px;
+          font-size: 12px;
           height: 0;
           min-height: 0;
           padding: 0;
@@ -94,7 +95,10 @@ const GlobalStyle = ({ isInlineFont }) => (
       }
       
       section {
-        margin-top: 24px;
+        margin-top: 32px;
+        @media print {
+          margin-top: 24px;
+        }
       }
       
       p {
@@ -115,16 +119,21 @@ const GlobalStyle = ({ isInlineFont }) => (
       }
       
       h2 {
-        margin: 0;
+        margin: 10px 0;
         line-height: 1;
-        margin: 8px 0;
+        @media print {
+          margin: 8px 0;
+        }
       }
       
       h3 {
+        margin: 10px 0;
         font-size: 1em;
         font-weight: normal;
         line-height: 1.5;
-        margin: 8px 0;
+        @media print {
+          margin: 8px 0;
+        }
       }
       
       ul {
