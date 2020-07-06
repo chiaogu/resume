@@ -16,8 +16,9 @@ function renderHtml(resume, config) {
 
 async function copyAssets(outputFolder) {
   const assetsFolder = path.join(__dirname, '..', '..', 'assets');
+  await fs.mkdir(path.join(outputFolder, 'assets'));
   const files = await fs.readdir(assetsFolder);
-  const copyAsset = file => fs.copyFile(path.join(assetsFolder, file), path.join(outputFolder, file));
+  const copyAsset = file => fs.copyFile(path.join(assetsFolder, file), path.join(outputFolder, 'assets', file));
   await Promise.all(files.map(copyAsset));
 }
 
