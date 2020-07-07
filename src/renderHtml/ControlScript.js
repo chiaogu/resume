@@ -71,9 +71,15 @@ const script = (darkModeToggleId, printButtonId, bgColors) => {
   
   const attachEventListener = () => {
     document.querySelectorAll('a').forEach(a => {
-      const blur = ({ target }) => target.blur();
+      const blur = ({ target }) => {
+        target.blur();
+        target.classList.remove('hover');
+      };
       a.addEventListener('mouseup', blur);
       a.addEventListener('mouseleave', blur);
+      a.addEventListener('touchend', blur);
+      a.addEventListener('touchcancel', blur);
+      a.addEventListener('touchstart', ({ target }) => target.classList.add('hover'));
       a.addEventListener('click', ({ target }) => {
         if(!target.href) return;
         gtag('event', target.href, {
