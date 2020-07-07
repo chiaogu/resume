@@ -1,7 +1,7 @@
 # Ian Chiao
 Seattle WA・[chiaogu@gmail.com](mailto:chiaogu@gmail.com)・[github.com/chiaogu](https://github.com/chiaogu)・[linkedin.com/in/chiaogu](https://linkedin.com/in/chiaogu)
 
-7 years of software experience developing web, mobile, and desktop applications for various industries. Solid knowledge of web development and continuously adopt new technologies. Focus on developer experience as well as user experience. Building things that people can enjoy or make their life easier.
+7 years of software experience developing web, mobile, and desktop applications for various industries. Solid knowledge of web development and continuously adopt new technologies. Focus on developer experience as well as user experience. Passionate about building things that people enjoy or make their life easier.
 
 ## Experience
 **Lead Frontend Engineer**・[Positive Grid](https://www.positivegrid.com)・Oct 2017 - Present  
