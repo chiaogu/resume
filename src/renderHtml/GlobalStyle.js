@@ -71,9 +71,10 @@ const GlobalStyle = ({ isInlineFont }) => (
         color: #000;
         font-size: 15.6px;
         font-family: Fira Sans, sans-serif;
-        -webkit-font-smoothing: antialiased;
         line-height: 1.67;
         transition: padding 0.3s;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%; 
         ::-webkit-scrollbar {
             width: 0;
         } 
@@ -82,7 +83,7 @@ const GlobalStyle = ({ isInlineFont }) => (
           color: #fff;
         }
         
-        ${mobileOnly(`padding: 63px 24px 63px 24px;`)}
+        ${mobileOnly(`padding: 63px 24px 147px 24px;`)}
         
         @media print {
           width: ${A4_WIDTH}px;
@@ -108,19 +109,16 @@ const GlobalStyle = ({ isInlineFont }) => (
       }
       
       h1 {
-        margin: 4px 44px 8.5px -5px;
+        margin: 4px 0 8.5px -5px;
         line-height: 1;
         font-size: 3em;
         font-family: Letter Gothic Std, monospace;
-        
-        @media screen and (max-width: 356px) {
-          font-size: 2.5em;
-        }
       }
       
       h2 {
         margin: 10px 0;
         line-height: 1;
+        -webkit-font-smoothing: subpixel-antialiased;
         @media print {
           margin: 8px 0;
         }
@@ -131,6 +129,7 @@ const GlobalStyle = ({ isInlineFont }) => (
         font-size: 1em;
         font-weight: normal;
         line-height: 1.5;
+        -webkit-font-smoothing: subpixel-antialiased;
         @media print {
           margin: 8px 0;
         }
