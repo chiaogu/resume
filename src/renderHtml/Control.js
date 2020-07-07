@@ -20,10 +20,6 @@ const Button = props => (
       border-radius: 24px;
       cursor: pointer;
       
-      &:active {
-        filter: invert(1);
-      }
-      
       &.dark > div{
         filter: invert(1);
       }

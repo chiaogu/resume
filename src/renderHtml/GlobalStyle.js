@@ -164,6 +164,10 @@ const GlobalStyle = ({ isInlineFont }) => (
           background-color: #000;
         }
         
+        &.hover {
+          filter: invert(1);
+        }
+          
         @media (hover: hover) {
           :hover,
           :focus {
