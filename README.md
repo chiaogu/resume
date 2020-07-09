@@ -15,7 +15,7 @@ Seattle WA・[chiaogu@gmail.com](mailto:chiaogu@gmail.com)・[github.com/chiaogu
 - Optimized data tracking and provided technical feedback during discussions to maximize design possibilities.
 - Responsible for frontend interviews, onboarding, and PR reviews; constantly refined the process.
 - Arranged weekly sharing meetings, workshops, and study groups; helped team members learn and inspire each other.
-- Gave tech talks on topics such as Arduino, GameDev, WebAudio, and E2E testing.
+- Gave tech talks on topics such as Arduino, Game Dev, Web Audio, and E2E testing.
 
 **Frontend Engineer**・[8 Interactive](https://no8.ai/home-en.html)・Nov 2016 - Sep 2017  
 - Implemented webhook handler to process messages from external services using Serverless framework and AWS Lambda.
