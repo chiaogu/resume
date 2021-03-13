@@ -4,7 +4,9 @@ Seattle WA・[chiaogu@gmail.com](mailto:chiaogu@gmail.com)・[github.com/chiaogu
 7 years of software experience developing web, mobile, and desktop applications for various industries. Solid knowledge of web development and continuously adopt new technologies. Focus on developer experience as well as user experience. Passionate about building things that people enjoy or make their life easier.
 
 ## Experience
-**Lead Frontend Engineer**・[Positive Grid](https://www.positivegrid.com)・Oct 2017 - Present  
+**Senior Software Engineer**・[PayPal](https://www.paypal.com)・Nov 2020 - Present
+
+**Lead Frontend Engineer**・[Positive Grid](https://www.positivegrid.com)・Oct 2017 - Sep 2020  
 - Developed graphic intensive and highly interactive UI for music software using React, Canvas, and modern web technologies.
 - Optimized rendering performance, reduced startup time by 10 seconds, and decreased CPU consumption by 30%.
 - Implemented landing pages and improved accessibility and SEO ranking for an eCommerce site with 40k+ daily unique visitors.
@@ -28,21 +30,19 @@ Seattle WA・[chiaogu@gmail.com](mailto:chiaogu@gmail.com)・[github.com/chiaogu
 **Android Engineer**・Union Technology・Sep 2013 - Jan 2014
 
 ## Personal Projects
-**Planetfall**・[Github](https://github.com/chiaogu/planetfall)・Sep 2018  
+**Stolen Sword**・[Github](https://chiaogu.github.io/stolen-sword/)・Sep 2020  
+A one finger action platform game for js13k 2020.
+
+**Planetfall**・[Github](https://chiaogu.github.io/planetfall)・Sep 2018  
 A 10kb planetary exploration game designed and developed in one month using vanilla javascript, Canvas API, and Rollup.
 
 **Synth**・[Github](https://github.com/chiaogu/synth)・Apr 2018  
 A synthesizer builder for you to build and share your own instrument, created using Tone.js, React, Redux, and Firebase.
 
-**Doubleloop**・[Github](https://github.com/chiaogu/doubleloop)・Aug 2017  
-A virtual drum pad that can record and share tracks, created using Angular, WebAudio, and Firebase.
-
-**Mute Spotify Ads**・[Github](https://github.com/chiaogu/mute-spotify-ads)・Feb 2020  
-A Spotify player that automatically mute ads, messing around with Spotify Web API, Next.js, and Electron.
-
 ## Awards
-**1st place in Mobile category**・[Js13kGames](https://2018.js13kgames.com/#winners-mobile)・Sep 2018  
-Won the 1st place in a game dev competition with a game written in javascript called Planetfall.
+**1st place in Mobile category**・[Js13kGames](https://2018.js13kgames.com/#winners-mobile)・Sep 2018
+
+**2nd place in Mobile category**・[Js13kGames](https://2020.js13kgames.com/#winners-mobile)・Sep 2020
 
 ## Education
 **B.S. in Computer Science**・Fu Jen Catholic University・Sep 2009 - Feb 2014
