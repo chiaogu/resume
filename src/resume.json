@@ -29,11 +29,20 @@
   },
   "work": [
     {
+      "company": "PayPal",
+      "position": "Senior Software Engineer",
+      "website": "https://www.paypal.com",
+      "startDate": "2020/11",
+      "endDate": null,
+      "summary": "",
+      "highlights": []
+    },
+    {
       "company": "Positive Grid",
       "position": "Lead Frontend Engineer",
       "website": "https://www.positivegrid.com",
       "startDate": "2017/10",
-      "endDate": null,
+      "endDate": "2020/09",
       "summary": "",
       "highlights": [
         "Developed graphic intensive and highly interactive UI for music software using React, Canvas, and modern web technologies.",
@@ -94,9 +103,15 @@
   ],
   "projects": [
     {
+      "name": "Stolen Sword",
+      "description": "A one finger action platform game for js13k 2020.",
+      "url": "https://chiaogu.github.io/stolen-sword/",
+      "endDate": "2020/09"
+    },
+    {
       "name": "Planetfall",
       "description": "A 10kb planetary exploration game designed and developed in one month using vanilla javascript, Canvas API, and Rollup.",
-      "url": "https://github.com/chiaogu/planetfall",
+      "url": "https://chiaogu.github.io/planetfall",
       "endDate": "2018/09"
     },
     {
@@ -104,18 +119,6 @@
       "description": "A synthesizer builder for you to build and share your own instrument, created using Tone.js, React, Redux, and Firebase.",
       "url": "https://github.com/chiaogu/synth",
       "endDate": "2018/04"
-    },
-    {
-      "name": "Doubleloop",
-      "description": "A virtual drum pad that can record and share tracks, created using Angular, WebAudio, and Firebase.",
-      "url": "https://github.com/chiaogu/doubleloop",
-      "endDate": "2017/08"
-    },
-    {
-      "name": "Mute Spotify Ads",
-      "description": "A Spotify player that automatically mute ads, messing around with Spotify Web API, Next.js, and Electron.",
-      "url": "https://github.com/chiaogu/mute-spotify-ads",
-      "endDate": "2020/02"
     }
   ],
   "awards": [
@@ -124,7 +127,14 @@
       "date": "2018/09",
       "awarder": "Js13kGames",
       "website": "https://2018.js13kgames.com/#winners-mobile",
-      "summary": "Won the 1st place in a game dev competition with a game written in javascript called Planetfall."
+      "summary": ""
+    },
+    {
+      "title": "2nd place in Mobile category",
+      "date": "2020/09",
+      "awarder": "Js13kGames",
+      "website": "https://2020.js13kgames.com/#winners-mobile",
+      "summary": ""
     }
   ],
   "skills": [
