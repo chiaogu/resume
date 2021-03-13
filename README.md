@@ -30,14 +30,14 @@ Seattle WA・[chiaogu@gmail.com](mailto:chiaogu@gmail.com)・[github.com/chiaogu
 **Android Engineer**・Union Technology・Sep 2013 - Jan 2014
 
 ## Personal Projects
-**Stolen Sword**・[Github](https://chiaogu.github.io/stolen-sword/)・Sep 2020  
+**Stolen Sword**・[Github](https://chiaogu.github.io/stolen-sword)・Sep 2020  
 A one finger action platform game for js13k 2020.
 
 **Planetfall**・[Github](https://chiaogu.github.io/planetfall)・Sep 2018  
 A 10kb planetary exploration game designed and developed in one month using vanilla javascript, Canvas API, and Rollup.
 
-**Synth**・[Github](https://github.com/chiaogu/synth)・Apr 2018  
-A synthesizer builder for you to build and share your own instrument, created using Tone.js, React, Redux, and Firebase.
+**Mute Spotify Ads**・[Github](https://mute-spotify-ads.now.sh)・Feb 2020  
+A Spotify player that automatically mute ads, messing around with Spotify Web API, Next.js, and Electron.
 
 ## Awards
 **1st place in Mobile category**・[Js13kGames](https://2018.js13kgames.com/#winners-mobile)・Sep 2018
