@@ -105,7 +105,7 @@
     {
       "name": "Stolen Sword",
       "description": "A one finger action platform game for js13k 2020.",
-      "url": "https://chiaogu.github.io/stolen-sword/",
+      "url": "https://chiaogu.github.io/stolen-sword",
       "endDate": "2020/09"
     },
     {
@@ -115,10 +115,10 @@
       "endDate": "2018/09"
     },
     {
-      "name": "Synth",
-      "description": "A synthesizer builder for you to build and share your own instrument, created using Tone.js, React, Redux, and Firebase.",
-      "url": "https://github.com/chiaogu/synth",
-      "endDate": "2018/04"
+      "name": "Mute Spotify Ads",
+      "description": "A Spotify player that automatically mute ads, messing around with Spotify Web API, Next.js, and Electron.",
+      "url": "https://mute-spotify-ads.now.sh",
+      "endDate": "2020/02"
     }
   ],
   "awards": [
