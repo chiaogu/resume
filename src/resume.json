@@ -113,12 +113,6 @@
       "description": "A 10kb planetary exploration game designed and developed in one month using vanilla javascript, Canvas API, and Rollup.",
       "url": "https://chiaogu.github.io/planetfall",
       "endDate": "2018/09"
-    },
-    {
-      "name": "Mute Spotify Ads",
-      "description": "A Spotify player that automatically mute ads, messing around with Spotify Web API, Next.js, and Electron.",
-      "url": "https://mute-spotify-ads.now.sh",
-      "endDate": "2020/02"
     }
   ],
   "awards": [
